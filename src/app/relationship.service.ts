@@ -5,12 +5,12 @@ import { Account } from './account';
 import 'rxjs/add/observable/of';
 
 @Injectable()
-export class AccountService {
+export class RelationshipService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getAccounts() : Observable<any> {
-    return this.httpClient.get('api/accounts');
+  public getRelationships() : Observable<any> {
+    return this.httpClient.get('api/relationships');
   }
 
 }

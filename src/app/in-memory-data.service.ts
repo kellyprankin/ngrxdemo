@@ -9,7 +9,7 @@ export class InMemoryDataService implements InMemoryDbService {
 
     const accounts = [ {
       id: "1",
-      number: "1234",
+      accountNumber: "1234",
       relationships: [
         { 
           id: "1",
@@ -25,7 +25,7 @@ export class InMemoryDataService implements InMemoryDbService {
      },
      {
       id: "2",
-      number: "5678",
+      accountNumber: "5678",
       relationships: [
         { 
           id: "1",
@@ -59,6 +59,6 @@ export class InMemoryDataService implements InMemoryDbService {
       }
     ]
 
-    return {accounts};
+    return {relationships};
   }
 }

@@ -1,3 +1,5 @@
-<p>
-  relationships works!
-</p>
+<ul>
+  <li *ngFor="let relationship of relationships">
+    {{relationship.id}} - {{relationship.name}} - {{relationship.type}}
+  </li>
+</ul>

@@ -1,5 +1,7 @@
+import { Relationship } from "./relationship";
+
 export class Account {
     id: string;
-    number: number;
-    relationships: Array<string>;
+    accountNumber: string;
+    relationships: Array<Relationship>;
 }

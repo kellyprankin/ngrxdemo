@@ -1,5 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/observable';
+
+import 'rxjs/add/operator/map';
+
 import { Account } from '../account';
+import { AccountService } from '../account.service';
 
 @Component({
   selector: 'app-accounts',
@@ -8,11 +13,15 @@ import { Account } from '../account';
 })
 export class AccountsComponent implements OnInit {
 
-  @Input() accounts: Array<Account>;
-
-  constructor() { }
+  public accounts: Array<Account>;
+  
+  constructor(
+    private accountService: AccountService
+  ) { }
 
   ngOnInit() {
+    this.accountService.getAccounts().subscribe(response =>
+       this.accounts = response.data as Array<Account>);
   }
 
 }

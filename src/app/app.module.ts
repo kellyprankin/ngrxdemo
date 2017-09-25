@@ -21,6 +21,7 @@ import { AccountService } from './account.service';
 import { AccountsComponent } from './accounts/accounts.component';
 import { environment } from '../environments/environment';
 import { RelationshipsComponent } from './relationships/relationships.component';
+import { RelationshipService } from './relationship.service';
 
 @NgModule({
   declarations: [
@@ -40,9 +41,10 @@ import { RelationshipsComponent } from './relationships/relationships.component'
   ],
   providers: [
     InMemoryDataService,
-     AccountService,
-     { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer },
-    ],
+    AccountService,
+    RelationshipService,
+    { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

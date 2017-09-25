@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RelationshipService } from '../relationship.service';
+import { Relationship } from '../relationship';
 
 @Component({
   selector: 'app-relationships',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RelationshipsComponent implements OnInit {
 
-  constructor() { }
+  relationships: Array<Relationship>;
+
+  constructor(
+    private relationshipService: RelationshipService
+  ) { }
 
   ngOnInit() {
+    this.relationshipService
+      .getRelationships()
+      .subscribe(response => this.relationships = response.data as Relationship[]);
   }
 
 }
