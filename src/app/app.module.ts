@@ -22,8 +22,7 @@ import { AccountsComponent } from './accounts/accounts.component';
 import { environment } from '../environments/environment';
 import { RelationshipsComponent } from './relationships/relationships.component';
 import { RelationshipService } from './relationship.service';
-import { reducers } from './common/state/index.reducer';
-import { metaReducers } from './common/state/index.reducer';
+import { reducers, metaReducers } from './common/state/index.reducer';
 
 
 @NgModule({
