@@ -13,4 +13,8 @@ export class AccountService {
     return this.httpClient.get('api/accounts');
   }
 
+  public getNormalizedAccounts() : Observable<any>{
+    return this.httpClient.get('api/normalizedAccounts');
+  }
+
 }

@@ -22,6 +22,8 @@ import { AccountsComponent } from './accounts/accounts.component';
 import { environment } from '../environments/environment';
 import { RelationshipsComponent } from './relationships/relationships.component';
 import { RelationshipService } from './relationship.service';
+import { metaReducer } from './common/state/index.reducer';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +35,7 @@ import { RelationshipService } from './relationship.service';
     BrowserModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({ reducer: metaReducer }),
     StoreRouterConnectingModule,
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     //EffectsModule.forRoot(),
