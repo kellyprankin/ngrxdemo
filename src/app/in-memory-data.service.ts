@@ -41,6 +41,25 @@ export class InMemoryDataService implements InMemoryDbService {
      }
     ];
 
+    const normalizedAccounts = [
+      [ {
+        id: "1",
+        accountNumber: "1234",
+        relationships: ["1", "2"]
+       },
+       {
+        id: "2",
+        accountNumber: "5678",
+        relationships: ["3", "4"]
+       },
+       {
+        id: "3",
+        accountNumber: "9011",
+        relationships: ["5"]
+       }
+      ]
+    ];
+
     const relationships = [
       { 
         id: "1",
@@ -56,9 +75,24 @@ export class InMemoryDataService implements InMemoryDbService {
         id: "3",
         name: "brent",
         type: 'joint'
+      },
+      {
+        id: "4",
+        name: "drew",
+        type: 'joint'
+      },
+      {
+        id: "5",
+        name: "eric",
+        type: 'beneficiary'
       }
     ]
 
-    return {relationships};
+    return {
+      accounts,
+      relationships,
+      normalizedAccounts
+    };
+    
   }
 }
