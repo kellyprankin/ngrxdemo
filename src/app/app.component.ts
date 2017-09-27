@@ -29,7 +29,7 @@ export class AppComponent {
     this.backgroundColorSubscription.unsubscribe();
   }
 
-  toggleBackground(color: string) : void {
+  public toggleBackground(color: string) : void {
     this.store.dispatch(new layoutActions.SetBackgroundColor(color));
   }
 }

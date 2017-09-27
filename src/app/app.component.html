@@ -1,10 +1,11 @@
-<div>
+<div [ngStyle]="{'background-color': backgroundColor}">
     <p>
-        work area
+        {{backgroundColor}}
     </p>
 </div>
 
 <button (click)="toggleBackground('red')">Toggle background red</button>
+<button (click)="toggleBackground('white')">Toggle background white</button>
 <button (click)="toggleBackground('blue')">Toggle background blue</button>
 
 <router-outlet></router-outlet>
